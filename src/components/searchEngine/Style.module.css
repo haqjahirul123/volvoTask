@@ -1,0 +1,33 @@
+.searchBox{
+    height:40px;
+    width:100%;
+    border-radius:10px;
+    margin-bottom:"1rem";
+    margin-top:0.5rem;
+    margin-right: 1rem;
+    
+}
+
+.searchArea{
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+#input{
+    height:50px;
+    width:100% !important;
+    border-radius:10px;
+    margin-bottom:1rem;
+    margin-top:0.5rem;  
+     
+}
+
+/* @media screen and (max-width: 600px) {
+    #input{
+        height:'50px';
+        width:'100%' !important;
+        border-radius:"10px";
+        margin-bottom:"1rem";
+        margin-top:"0.5rem"   
+    }
+} */

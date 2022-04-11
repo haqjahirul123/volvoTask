@@ -42,10 +42,37 @@
     color:rgb(3, 74, 180) !important; 
 }
 
+.custombuttongroup {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content:right; 
+    right: 1rem;   
+  }
+  .containerPaddingBottom {
+    padding-bottom: 60px;
+    
+  }
+  .nextSlide{
+    height:2.5rem; 
+    width:2.5rem;
+    margin-left: 1rem;
+  }
+  .prevSlide{
+    height:2.5rem; 
+    width:2.5rem;
+    float: right;
+    transform: rotate(-180deg);
+    overflow:hidden;
+   
+  }
 
-@media screen and (max-width: 600px) {
+
+
+@media screen and (max-width: 400px) {
     .cardBody{
-        width:auto;
+        width:30rem !important;
         height: auto;
         margin-left: 1rem; 
         padding:1px ;   
@@ -72,32 +99,7 @@
   }
 
 
-  .custombuttongroup {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    justify-content:right; 
-    right: 1rem;   
-  }
-  .containerPaddingBottom {
-    padding-bottom: 60px;
-    
-  }
-  .nextSlide{
-    height:2.5rem; 
-    width:2.5rem;
-    margin-left: 1rem;
-  }
-  .prevSlide{
-    height:2.5rem; 
-    width:2.5rem;
-    float: right;
-    transform: rotate(-180deg);
-    overflow:hidden;
-   
-  }
-
+ 
  
 
 

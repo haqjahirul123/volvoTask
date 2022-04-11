@@ -1,5 +1,5 @@
 import React,{useRef} from 'react'
-import styles from './searchEngine.module.css'
+import styles from './Style.module.css'
 
 const SearchEngine=(props)=> {
     const inputEl:any=useRef("")
@@ -10,7 +10,7 @@ const SearchEngine=(props)=> {
     }
 
     return (
-        <div>
+        <div className={styles.searchArea} >
         <label>Search</label>
         <input
           ref={inputEl}
@@ -18,8 +18,8 @@ const SearchEngine=(props)=> {
           placeholder="Search any term"
           value={props.SearchTerm}
           onChange={getSearchTerm}
-          style={{ height:'40px',width:'99%',borderRadius:"10px",marginBottom:"1rem",marginTop:"0.5rem"}}
-          
+           //style={{ height:'40px',width:'99%',borderRadius:"10px",marginBottom:"1rem",marginTop:"0.5rem"}}
+           className={styles.searchBox}
         />
         
         </div>
