@@ -43,7 +43,7 @@
 }
 
 
-@media screen and (max-width: 100px) {
+@media screen and (max-width: 600px) {
     .cardBody{
         width:auto;
         height: auto;
@@ -72,16 +72,13 @@
   }
 
 
-  
-
   .custombuttongroup {
     position: absolute;
     bottom: 0;
-    left: 0;
-
+    width: 100%;
     display: flex;
-    justify-content: center;
-    right: 0;   
+    justify-content:right; 
+    right: 1rem;   
   }
   .containerPaddingBottom {
     padding-bottom: 60px;
@@ -95,48 +92,13 @@
   .prevSlide{
     height:2.5rem; 
     width:2.5rem;
-    margin-left: 80rem;
+    float: right;
     transform: rotate(-180deg);
     overflow:hidden;
    
   }
 
-  @media screen and (min-width: 0px)and (max-width: 600px) {
-
-    .nextSlide{
-        height:2.5rem; 
-        width:2.5rem;
-        margin-left: 1rem;
-      }
-      .prevSlide{
-        height:2.5rem; 
-        width:2.5rem;
-        margin-left: 0rem;
-        transform: rotate(-180deg);
-        overflow:hidden;
-       
-      }
-
-  }
-
-  @media screen and (min-width: 601px)and (max-width: 1000px) {
-
-    .nextSlide{
-        height:2.5rem; 
-        width:2.5rem;
-        margin-left: 1rem;
-      }
-      .prevSlide{
-        height:2.5rem; 
-        width:2.5rem;
-        margin-left: 30rem;
-        transform: rotate(-180deg);
-        overflow:hidden;
-       
-      }
-
-  }
-
+ 
 
 
   
