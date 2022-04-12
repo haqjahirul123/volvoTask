@@ -15,7 +15,7 @@ const SearchEngine=(props)=> {
         <input
           ref={inputEl}
           type="text"
-          placeholder="Search any term"
+          placeholder="Filter by any term"
           value={props.SearchTerm}
           onChange={getSearchTerm}
            //style={{ height:'40px',width:'99%',borderRadius:"10px",marginBottom:"1rem",marginTop:"0.5rem"}}

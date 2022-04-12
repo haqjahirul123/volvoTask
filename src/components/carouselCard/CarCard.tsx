@@ -17,11 +17,11 @@ const CarCard=(props)=>{
       <div >
         <Card className={styles.cardBody}> 
           <CardTitle >
-          <div className={styles.bodyType}>{bodyType}</div><br/>
-            <div >
-              <div className={styles.modelName}>{modelName}</div>
-              <div className={styles.modelType}>{modelType}</div>
-            </div> 
+            <div className={styles.bodyType}>{bodyType}</div><br/>
+              <div >
+                <div className={styles.modelName}>{modelName}</div>
+                <div className={styles.modelType}>{modelType}</div>
+              </div> 
           </CardTitle>
           <CardImg
             className={styles.imagePosition}

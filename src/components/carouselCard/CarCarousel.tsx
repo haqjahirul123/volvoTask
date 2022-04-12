@@ -14,17 +14,20 @@ const CarCarousel=({CarsInfos})=> {
         desktop: {
           breakpoint: { max: 3000, min: 1000 },
           items: 4,
-          slidesToSlide: 4 // optional, default to 1.
+          slidesToSlide: 4, // optional, default to 1.
+          dots: false,
         },
         tablet: {
           breakpoint: { max: 1000, min: 600},
           items: 2,
-          slidesToSlide: 2 // optional, default to 1.
+          slidesToSlide: 2, // optional, default to 1.
+          dots: false,
         },
         mobile: {
           breakpoint: { max: 600, min: 0 },
           items: 1,
-          slidesToSlide: 1 // optional, default to 1.
+          slidesToSlide: 1, // optional, default to 1.
+          dots: true,
         } 
       };
 
@@ -34,7 +37,7 @@ const CarCarousel=({CarsInfos})=> {
          )
     
       })
-     
+
     return (
         <div>
             <Carousel 
@@ -42,10 +45,10 @@ const CarCarousel=({CarsInfos})=> {
             draggable={false}
             arrows={false}
             responsive={responsive}
-            //showDots={((typeof window !== "undefined")&&(window.innerWidth > 600))  ? false:true}
+            //showDots={((typeof window !== "undefined")&&(window.innerWidth <= 600))  ? true:false}
+            //showDots={dotshow}
             showDots={false}
-            //showDots={responsive.mobile.breakpoint.max < 600 ? true : false}
-            //showDots={ window.innerWidth<responsive.mobile.breakpoint.max  ? true:false}
+            //showDots={responsive.mobile.slidesToSlide==1?true:false}
             ssr={true} // means to render carousel on server-side.
             infinite={true}
             keyBoardControl={true}
@@ -54,7 +57,9 @@ const CarCarousel=({CarsInfos})=> {
             itemClass="carousel-item-padding-40-px"
             containerClass={styles.containerPaddingBottom}
             customButtonGroup={<CustomButtonGroup />}
-            
+           // customButtonGroup={responsive.desktop.breakpoint.min< 1000 ?<CustomButtonGroup />: <NotFound/>}
+           removeArrowOnDeviceType={["tablet", "mobile"]}
+          
             >
               {carInfoCard.length >0 ? carInfoCard : <NotFound/>}  
             </Carousel>
