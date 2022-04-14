@@ -15,28 +15,39 @@ const CarCarousel=({CarsInfos})=> {
           breakpoint: { max: 3000, min: 1000 },
           items: 4,
           slidesToSlide: 4, // optional, default to 1.
-          dots: false,
+          showDots: false,
         },
         tablet: {
           breakpoint: { max: 1000, min: 600},
           items: 2,
           slidesToSlide: 2, // optional, default to 1.
-          dots: false,
+          showDots: true,
         },
         mobile: {
           breakpoint: { max: 600, min: 0 },
           items: 1,
           slidesToSlide: 1, // optional, default to 1.
-          dots: true,
+          showDots: true,
         } 
       };
 
-      const carInfoCard= CarsInfos.map((CarInfo)=>{
+      const carInfoCard= CarsInfos.map((CarInfo: { id: any; })=>{
           return (
              <CarCard  key={CarInfo.id} CarInfo={CarInfo}/>  
          )
     
       })
+
+      const dot:any=()=> {
+    
+        {
+          if ( typeof window !== undefined) 
+           {
+             responsive.mobile.breakpoint.max>= window.innerWidth?false:true
+          }
+      
+        }
+      }
 
     return (
         <div>
@@ -48,8 +59,8 @@ const CarCarousel=({CarsInfos})=> {
             //showDots={((typeof window !== "undefined")&&(window.innerWidth <= 600))  ? true:false}
             //showDots={dotshow}
             showDots={false}
-            //showDots={responsive.mobile.slidesToSlide==1?true:false}
-            ssr={true} // means to render carousel on server-side.
+            //showDots ={dot}
+            ssr={true} // means to render carousel on server-side
             infinite={true}
             keyBoardControl={true}
             customTransition="all .5"    
@@ -58,7 +69,7 @@ const CarCarousel=({CarsInfos})=> {
             containerClass={styles.containerPaddingBottom}
             customButtonGroup={<CustomButtonGroup />}
            // customButtonGroup={responsive.desktop.breakpoint.min< 1000 ?<CustomButtonGroup />: <NotFound/>}
-           removeArrowOnDeviceType={["tablet", "mobile"]}
+           //removeArrowOnDeviceType={["tablet", "mobile"]}
           
             >
               {carInfoCard.length >0 ? carInfoCard : <NotFound/>}  
@@ -66,10 +77,10 @@ const CarCarousel=({CarsInfos})=> {
             
         </div>
     )
+
+  
 }
 
 export default  CarCarousel
 
-function dot(dot: any) {
-  throw new Error("Function not implemented.");
-}
+

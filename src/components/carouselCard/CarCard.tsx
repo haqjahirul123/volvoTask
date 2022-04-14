@@ -15,7 +15,8 @@ const CarCard=(props)=>{
     console.log(props)
     return(
       <div >
-        <Card className={styles.cardBody}> 
+      <Link href={`/learn/${id}`}>
+        <Card className={styles.cardBody} as='a' href={`/learn/${id}`}> 
           <CardTitle >
             <div className={styles.bodyType}>{bodyType}</div><br/>
               <div >
@@ -31,15 +32,12 @@ const CarCard=(props)=>{
           ></CardImg>
            <CardBody> 
             <div>
-                <Link href={`/learn/${id}`}>
-                  <a className={styles.linkPageLearn} > LEARN<img className={styles.nextArrow} src={arrow.src} alt='img'/></a>
-                </Link>
-                <Link href={`/learn/${id}`}>
-                  <a className={styles.linkPageShop} >SHOP<img className={styles.nextArrow} src={arrow.src} alt='img'/></a>    
-                </Link>
+                <a className={styles.linkPageLearn} > LEARN<img className={styles.nextArrow} src={arrow.src} alt='img'/></a>
+                <a className={styles.linkPageShop} >SHOP<img className={styles.nextArrow} src={arrow.src} alt='img'/></a>         
             </div>      
           </CardBody>         
-        </Card>      
+        </Card>   
+        </Link>   
       </div>
     )
 }
