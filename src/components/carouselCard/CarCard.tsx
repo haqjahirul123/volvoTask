@@ -23,20 +23,23 @@ const CarCard=(props)=>{
                 <div className={styles.modelType}>{modelType}</div>
               </div> 
           </CardTitle>
-          <Link href={`/${id}`}>
+           <Link href={`/${id}`} > 
+          <div>
           <CardImg
             className={styles.imagePosition}
             alt="..."
             src={imageUrl}
             top
           ></CardImg>
-          </Link>
+          </div>
+        
+           </Link> 
            <CardBody> 
             <div>
-                <Link href={`/learn/${id}`}>
+                <Link href={`/learn/${id}`} >
                   <a className={styles.linkPageLearn} > LEARN<img className={styles.nextArrow} src={arrow.src} alt='img'/></a>
                 </Link>
-                <Link href={`/shop/${id}`}>
+                <Link href={`/shop/${id}`} >
                   <a className={styles.linkPageShop} >SHOP<img className={styles.nextArrow} src={arrow.src} alt='img'/></a>    
                 </Link>
             </div>      

@@ -6,26 +6,27 @@ import styles from './Style.module.css'
 import CarCard from "./CarCard";
 import NotFound from '../NotFound';
 
-const CarCarousel=({CarsInfos})=> {
+
+const CarCarousel=({CarsInfos,deviceType})=> {
     //const CarsInfos =props.CarsInfos
     const responsive = {
         desktop: {
           breakpoint: { max: 3000, min: 1001 },
           items: 4,
           slidesToSlide: 4, // optional, default to 1.
-         
+          partialVisibilityGutter: 40
         },
         tablet: {
           breakpoint: { max: 1000, min: 601},
           items: 2,
           slidesToSlide: 2, // optional, default to 1.
-      
+          partialVisibilityGutter: 30
         },
         mobile: {
           breakpoint: { max: 600, min: 0 },
           items: 1,
           slidesToSlide: 1, // optional, default to 1.
-          
+          partialVisibilityGutter: 40
           
         } 
       };
@@ -55,7 +56,7 @@ const CarCarousel=({CarsInfos})=> {
             draggable={false}
             arrows={false}
             responsive={responsive}
-            showDots={responsive.mobile ? false : true}
+            showDots={false}
             //deviceType={props.deviceType}
             ssr={true} // means to render carousel on server-side
             infinite={true}
@@ -65,7 +66,7 @@ const CarCarousel=({CarsInfos})=> {
             itemClass="carousel-item-padding-40-px"
             containerClass={styles.containerPaddingBottom}
             customButtonGroup={<CustomButtonGroup />}
-           removeArrowOnDeviceType={["tablet", "mobile","desktop"]}
+            removeArrowOnDeviceType={["tablet", "mobile"]}
           
             >
               {carInfoCard.length >0 ? carInfoCard : <NotFound/>}  

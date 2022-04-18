@@ -90,7 +90,8 @@
         text-decoration: none; 
         color: rgb(3, 74, 180); 
         font-weight: bold;  
-    }
+        /* font-size: small;   */
+ }
 
   }
 

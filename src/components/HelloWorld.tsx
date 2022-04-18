@@ -38,7 +38,7 @@ export const HelloWorld: React.FC = () => {
   return (
     <div> 
       <SearchEngine SearchTerm={SearchTerm} SearchHandelar={SearchHandelar}/>
-      <CarCarousel CarsInfos={SearchTerm.length <1 ? CarsInfos:SearchResult}/>  
+      <CarCarousel CarsInfos={SearchTerm.length <1 ? CarsInfos:SearchResult}  />  
     </div>
   )
 };
