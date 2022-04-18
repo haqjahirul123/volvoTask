@@ -1,7 +1,6 @@
 import  Link  from 'next/link';
 import styles from './Style.module.css'
 import arrow from '../../../docs/chevron-small.svg'
-
 import {  
     Card,
     CardBody,
@@ -15,7 +14,7 @@ const CarCard=(props)=>{
     console.log(props)
     return(
       <div >
-      <Link href={`/learn/${id}`}>
+     
         <Card className={styles.cardBody} as='a' href={`/learn/${id}`}> 
           <CardTitle >
             <div className={styles.bodyType}>{bodyType}</div><br/>
@@ -24,7 +23,7 @@ const CarCard=(props)=>{
                 <div className={styles.modelType}>{modelType}</div>
               </div> 
           </CardTitle>
-          <Link href={`/details/${id}`}>
+          <Link href={`/${id}`}>
           <CardImg
             className={styles.imagePosition}
             alt="..."
@@ -37,13 +36,13 @@ const CarCard=(props)=>{
                 <Link href={`/learn/${id}`}>
                   <a className={styles.linkPageLearn} > LEARN<img className={styles.nextArrow} src={arrow.src} alt='img'/></a>
                 </Link>
-                <Link href={`/learn/${id}`}>
+                <Link href={`/shop/${id}`}>
                   <a className={styles.linkPageShop} >SHOP<img className={styles.nextArrow} src={arrow.src} alt='img'/></a>    
                 </Link>
             </div>      
           </CardBody>         
         </Card>   
-        </Link>   
+       
       </div>
     )
 }

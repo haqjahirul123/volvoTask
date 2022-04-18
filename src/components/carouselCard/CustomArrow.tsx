@@ -1,17 +1,14 @@
 import ArrowForwardIcon  from "../../../docs/chevron-circled.svg";
 import styles from './Style.module.css'
-import { Grid, IconButton,View } from 'vcc-ui';
-
 
 const CustomButtonGroup = ({ next, previous, goToSlide, carouselState }:any) => {
-  const { totalItems, currentSlide } = carouselState;
-  return (
-
+  const { totalItems, currentSlide } = carouselState;  
   
-    <div className={styles.custombuttongroup}>
-      <i onClick={() => previous()}><img src={ArrowForwardIcon.src} className={styles.prevSlide}/></i>
-      <i onClick={() => next()}><img src={ArrowForwardIcon.src} className={styles.nextSlide}/></i>
-    </div>
+  return (
+          <div className={styles.custombuttongroup}>
+            <i onClick={() => previous()}><img src={ArrowForwardIcon.src} className={styles.prevSlide}/></i>
+            <i onClick={() => next()}><img src={ArrowForwardIcon.src} className={styles.nextSlide}/></i>
+          </div>
   );
 };
 

@@ -68,8 +68,6 @@
    
   }
 
-
-
 @media screen and (max-width: 600px) {
     .cardBody{
         width:30rem !important;
@@ -83,7 +81,6 @@
         text-decoration: none;
         color: rgb(3, 74, 180); 
         font-weight: bold;
-        /* font-size: small; */
     }
     .linkPageShop{
         width:auto;
@@ -93,8 +90,7 @@
         text-decoration: none; 
         color: rgb(3, 74, 180); 
         font-weight: bold;  
-        /* font-size: small;   */
- }
+    }
 
   }
 

@@ -3,31 +3,30 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import CustomButtonGroup from './CustomArrow'
 import styles from './Style.module.css'
-
 import CarCard from "./CarCard";
 import NotFound from '../NotFound';
-import { useEffect, useState } from "react";
 
 const CarCarousel=({CarsInfos})=> {
     //const CarsInfos =props.CarsInfos
     const responsive = {
         desktop: {
-          breakpoint: { max: 3000, min: 1000 },
+          breakpoint: { max: 3000, min: 1001 },
           items: 4,
           slidesToSlide: 4, // optional, default to 1.
-          showDots: false,
+         
         },
         tablet: {
-          breakpoint: { max: 1000, min: 600},
+          breakpoint: { max: 1000, min: 601},
           items: 2,
           slidesToSlide: 2, // optional, default to 1.
-          showDots: true,
+      
         },
         mobile: {
           breakpoint: { max: 600, min: 0 },
           items: 1,
           slidesToSlide: 1, // optional, default to 1.
-          showDots: true,
+          
+          
         } 
       };
 
@@ -56,10 +55,8 @@ const CarCarousel=({CarsInfos})=> {
             draggable={false}
             arrows={false}
             responsive={responsive}
-            //showDots={((typeof window !== "undefined")&&(window.innerWidth <= 600))  ? true:false}
-            //showDots={dotshow}
-            showDots={false}
-            //showDots ={dot}
+            showDots={responsive.mobile ? false : true}
+            //deviceType={props.deviceType}
             ssr={true} // means to render carousel on server-side
             infinite={true}
             keyBoardControl={true}
@@ -68,8 +65,7 @@ const CarCarousel=({CarsInfos})=> {
             itemClass="carousel-item-padding-40-px"
             containerClass={styles.containerPaddingBottom}
             customButtonGroup={<CustomButtonGroup />}
-           // customButtonGroup={responsive.desktop.breakpoint.min< 1000 ?<CustomButtonGroup />: <NotFound/>}
-           //removeArrowOnDeviceType={["tablet", "mobile"]}
+           removeArrowOnDeviceType={["tablet", "mobile","desktop"]}
           
             >
               {carInfoCard.length >0 ? carInfoCard : <NotFound/>}  
